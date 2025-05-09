@@ -11,8 +11,8 @@ Radxa FLIR ONE PRO setup
 8.	sudo mkdir -p /lib/modules/$(uname -r)/kernel/drivers/media/video/
 9.	sudo cp ~/v4l2loopback/v4l2loopback.ko /lib/modules/$(uname -r)/kernel/drivers/media/video/
 10.	create udev rules file: sudo nano /etc/udev/rules.d/99-flir.rules
- \n a.	In file, paste: SUBSYSTEM=="usb", ATTR{idVendor}=="09cb", MODE="0666" 
- \n b.	Save and close: Ctrl+o, enter, ctrl+x
+ <\n> a.	In file, paste: SUBSYSTEM=="usb", ATTR{idVendor}=="09cb", MODE="0666" 
+ <\n> b.	Save and close: Ctrl+o, enter, ctrl+x
  \n c.	sudo udevadm control --reload-rules
  \n d.	sudo udevadm trigger
 11.	sudo depmod -a
