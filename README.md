@@ -10,11 +10,11 @@ Radxa FLIR ONE PRO setup
 7.	sudo make install
 8.	sudo mkdir -p /lib/modules/$(uname -r)/kernel/drivers/media/video/
 9.	sudo cp ~/v4l2loopback/v4l2loopback.ko /lib/modules/$(uname -r)/kernel/drivers/media/video/
-10.	create udev rules file: sudo nano /etc/udev/rules.d/99-flir.rules
- <\n> a.	In file, paste: SUBSYSTEM=="usb", ATTR{idVendor}=="09cb", MODE="0666" 
- <\n> b.	Save and close: Ctrl+o, enter, ctrl+x
- \n c.	sudo udevadm control --reload-rules
- \n d.	sudo udevadm trigger
+10.	create udev rules file: sudo nano /etc/udev/rules.d/99-flir.rules <br/>
+  a.	In file, paste: SUBSYSTEM=="usb", ATTR{idVendor}=="09cb", MODE="0666" <br/>
+  b.	Save and close: Ctrl+o, enter, ctrl+x <br/>
+  c.	sudo udevadm control --reload-rules <br/>
+  d.	sudo udevadm trigger <br/>
 11.	sudo depmod -a
 12.	sudo modprobe v4l2loopback devices=2 video_nr=2,3 card_label=”FLIR_visible”,”FLIR_thermal” exclusive_caps=1
 13.	(from root, if you have a py file to execute) python3 thermal.py
