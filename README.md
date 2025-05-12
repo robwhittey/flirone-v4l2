@@ -21,7 +21,8 @@ Radxa FLIR ONE PRO setup
 
 Note: On fresh startup, you will need to run from line 12 (unless you have used subprocess.run() in your .py file).
 
-
+Reference:
+https://www.dpin.de/nf/thermal-camera-on-linux-flir-one-pro/
 
 #### Note from owner
 
