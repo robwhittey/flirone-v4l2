@@ -21,6 +21,8 @@ Radxa FLIR ONE PRO setup
 
 Note: On fresh startup, you will need to run from line 12 (unless you have used subprocess.run() in your .py file).
 
+To check device list, run lsusb to find physical devices or v4l2-ctl --list-devices for device location code
+
 Reference:
 https://www.dpin.de/nf/thermal-camera-on-linux-flir-one-pro/
 
