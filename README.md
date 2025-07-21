@@ -2,11 +2,11 @@
 
 Radxa FLIR ONE PRO setup
 1.	Sudo apt update
-2.	sudo apt install build-essential git dkms linux-headers-$(uname -r)
+2.	sudo apt install build-essential git dkms linux-headers-$(uname -r) libjpeg-dev libusb-1.0-0-dev
 3.	git clone https://github.com/robwhittey/v4l2loopback.git
 4.	git clone https://github.com/robwhittey/flirone-v4l2.git 
 5.	cd v4l2loopback
-6.	make KERNELDIR=/usr/src/linux-headers-5.10.110-1-rockchip
+6.	make KERNELDIR=/usr/src/linux-headers-$(uname -r)
 7.	sudo make install
 8.	sudo mkdir -p /lib/modules/$(uname -r)/kernel/drivers/media/video/
 9.	sudo cp ~/v4l2loopback/v4l2loopback.ko /lib/modules/$(uname -r)/kernel/drivers/media/video/
