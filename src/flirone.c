@@ -48,7 +48,7 @@
 
 #define VIDEO_DEVICE2 "/dev/video3" // colorized thermal image
 #define FRAME_WIDTH2  160
-#define FRAME_HEIGHT2 128
+#define FRAME_HEIGHT2 120
 
 #define FRAME_FORMAT0 V4L2_PIX_FMT_GREY
 #define FRAME_FORMAT1 V4L2_PIX_FMT_MJPEG
@@ -325,10 +325,10 @@ void vframe(char ep[],char EP_error[], int r, int actual_length, unsigned char b
   int x, y;
   unsigned char *fb_proc,*fb_proc2; 
 
-  fb_proc = malloc(160 * 128); // 8 Bit gray buffer really needs only 160 x 120
-  memset(fb_proc, 128, 160*128);       // sizeof(fb_proc) doesn't work, value depends from LUT
+  fb_proc = malloc(160 * 120); // 8 Bit gray buffer really needs only 160 x 120
+  memset(fb_proc, 128, 160*120);       // sizeof(fb_proc) doesn't work, value depends from LUT
   
-  fb_proc2 = malloc(160 * 128 * 3 ); // 8x8x8  Bit RGB buffer 
+  fb_proc2 = malloc(160 * 120 * 3 ); // 8x8x8  Bit RGB buffer 
 
   int min = 0x10000, max = 0;
   float rms = 0;
@@ -403,7 +403,7 @@ void vframe(char ep[],char EP_error[], int r, int actual_length, unsigned char b
   //font_write(fb_proc, 160-6, maxy, "<");
   //font_write(fb_proc, maxx, 120-8, "|");
 
-  for (y = 0; y < 128; ++y) 
+  for (y = 0; y < 120; ++y) 
   {
     for (x = 0; x < 160; ++x) {  
 
