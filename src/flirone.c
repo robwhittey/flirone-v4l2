@@ -387,10 +387,10 @@ void vframe(char ep[],char EP_error[], int r, int actual_length, unsigned char b
   strncpy(st2, st1, MAX);
   // write zero to string !! 
   st2[MAX-1] = '\0';
-  font_write(fb_proc, 1, 120, st2);
+  //font_write(fb_proc, 1, 120, st2);
 
   // show crosshairs, remove if required 
-  font_write(fb_proc, 80-2, 60-3, "+");
+  //font_write(fb_proc, 80-2, 60-3, "+");
 
   maxx -= 4;
   maxy -= 4;
@@ -400,8 +400,8 @@ void vframe(char ep[],char EP_error[], int r, int actual_length, unsigned char b
   if (maxx > 150) maxx = 150;
   if (maxy > 110) maxy = 110;
 
-  font_write(fb_proc, 160-6, maxy, "<");
-  font_write(fb_proc, maxx, 120-8, "|");
+  //font_write(fb_proc, 160-6, maxy, "<");
+  //font_write(fb_proc, maxx, 120-8, "|");
 
   for (y = 0; y < 128; ++y) 
   {
