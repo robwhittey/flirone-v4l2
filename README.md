@@ -1,27 +1,8 @@
-### Flir One for Linux v4l2
+### Flir One for Windows
 
 Radxa FLIR ONE PRO setup
-1.	Sudo apt update
-2.	sudo apt install build-essential git dkms linux-headers-$(uname -r) libjpeg-dev libusb-1.0-0-dev
-3.	git clone https://github.com/robwhittey/v4l2loopback.git
-4.	git clone https://github.com/robwhittey/flirone-v4l2.git 
-5.	cd v4l2loopback
-6.	make KERNELDIR=/usr/src/linux-headers-$(uname -r)
-7.	sudo make install
-8.	sudo mkdir -p /lib/modules/$(uname -r)/kernel/drivers/media/video/
-9.	sudo cp ~/v4l2loopback/v4l2loopback.ko /lib/modules/$(uname -r)/kernel/drivers/media/video/
-10.	create udev rules file: sudo nano /etc/udev/rules.d/99-flir.rules <br/>
-  a.	In file, paste: SUBSYSTEM=="usb", ATTR{idVendor}=="09cb", MODE="0666" <br/>
-  b.	Save and close: Ctrl+o, enter, ctrl+x <br/>
-  c.	sudo udevadm control --reload-rules <br/>
-  d.	sudo udevadm trigger <br/>
-11.	sudo depmod -a
-12.	sudo modprobe v4l2loopback devices=2 video_nr=2,3 card_label=”FLIR_visible”,”FLIR_thermal” exclusive_caps=1
-13.	(from root, if you have a py file to execute) python3 thermal.py
+1.	PENDING!!!
 
-Note: On fresh startup, you will need to run from line 12 (unless you have used subprocess.run() in your .py file).
-
-To check device list, run lsusb to find physical devices or v4l2-ctl --list-devices for device location code
 
 Reference:
 https://www.dpin.de/nf/thermal-camera-on-linux-flir-one-pro/
